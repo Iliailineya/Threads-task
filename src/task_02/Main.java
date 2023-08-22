@@ -7,11 +7,21 @@ import java.util.Arrays;
 // Виводяться фрукти, потім овочі
 public class Main {
 
-    public static void main(String[] arg) throws InterruptedException {
+    public static void main(String[] arg) {
+        demoRun();
+    }
 
+    public static void demoRun() {
         Fruits fruits = new Fruits();
         fruits.start();
-        fruits.join();
+        try {
+            fruits.join();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        System.out.println();
+
         Veges veges = new Veges();
         showVeges(veges.getFoodItems());
     }

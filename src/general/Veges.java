@@ -2,14 +2,11 @@ package general;
 
 public class Veges extends FoodThread {
     public Veges() {
+        super("Veges");
     }
 
-    public Veges(long sleepTime) {
-        super(sleepTime);
-    }
-
-    public Veges(ThreadGroup group, String name) {
-        super(group, name);
+    public Veges(ThreadGroup group) {
+        super(group, "Veges");
     }
 
     @Override

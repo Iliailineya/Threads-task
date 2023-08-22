@@ -1,15 +1,8 @@
 package general;
 
 public class Berries extends FoodThread {
-    public Berries() {
-    }
-
-    public Berries(long sleepTime) {
-        super(sleepTime);
-    }
-
-    public Berries(ThreadGroup group, String name) {
-        super(group, name);
+    public Berries(ThreadGroup group) {
+        super(group, "Berries");
     }
 
     @Override

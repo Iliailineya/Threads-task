@@ -13,17 +13,13 @@ public class Main {
     }
 
     private static void startRobot(String name) {
-        Robot robot = createRobot(name);
-        printRobotInfo(robot);
+        Robot robot = new Robot(name);
+        getRobotInfo(robot);
         robot.start();
-        printRobotInfo(robot);
+        getRobotInfo(robot);
     }
 
-    private static Robot createRobot(String name) {
-        return new Robot(name);
-    }
-
-    private static void printRobotInfo(Robot robot) {
+    private static void getRobotInfo(Robot robot) {
         System.out.println(robot.getName() + " state: " + robot.getState());
     }
 }
