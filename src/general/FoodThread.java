@@ -25,15 +25,12 @@ public abstract class FoodThread extends Thread {
     @Override
     public void run() {
         System.out.println(Thread.currentThread().getName() + ":");
-        processFoodItems();
-        if (sleepTime>500)processSleep();
-    }
-
-    protected void processFoodItems() {
         for (String foodItem : getFoodItems()) {
             System.out.println(foodItem);
-            if (sleepTime==500)processSleep();
+            if (sleepTime == 500) processSleep();
         }
+
+        if (sleepTime > 500) processSleep();
     }
 
     protected void processSleep() {
