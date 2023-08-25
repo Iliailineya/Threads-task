@@ -16,28 +16,16 @@ public abstract class FoodThread extends Thread {
         this.sleepTime = sleepTime;
     }
 
-    protected abstract String[] getFoodItems();
-
-    public String getGroupName() {
-        return this.getClass().getSimpleName();
-    }
-
     @Override
     public void run() {
         System.out.println(Thread.currentThread().getName() + ":");
         for (String foodItem : getFoodItems()) {
             System.out.println(foodItem);
-            if (sleepTime == 500) processSleep();
+            if (sleepTime == 500) Util.processSleep(sleepTime);
         }
 
-        if (sleepTime > 500) processSleep();
+        if (sleepTime > 500) Util.processSleep(sleepTime);
     }
 
-    protected void processSleep() {
-        try {
-            Thread.sleep(sleepTime);
-        } catch (InterruptedException e) {
-            System.out.println(Thread.currentThread().getName() + " got interrupted");
-        }
-    }
+    protected abstract String[] getFoodItems();
 }

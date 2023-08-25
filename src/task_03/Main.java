@@ -20,12 +20,12 @@ public class Main {
     }
 
     private static <T extends FoodThread> void showGroupFood(T food) {
-        Thread thread = new Thread(food.getThreadGroup(), food, food.getGroupName());
-        thread.start();
+        food.start();
         try {
-            thread.join();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            food.join();
+        } catch (InterruptedException ie) {
+            System.out.println("Exception: " + ie);
+            ie.printStackTrace();
         }
     }
 

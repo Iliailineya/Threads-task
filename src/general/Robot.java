@@ -1,7 +1,7 @@
 package general;
 
-
 public class Robot extends Thread {
+    protected long sleepTime = 1500;
 
     public Robot(String str) {
         super(str);
@@ -10,13 +10,8 @@ public class Robot extends Thread {
     @Override
     public void run() {
         System.out.println(Thread.currentThread().getName() + " Started");
-        try {
-            Robot.sleep(1500);
-            System.out.println(Thread.currentThread().getName() + " Waiting...");
-        } catch (InterruptedException ie) {
-            System.out.println("Exception: " + ie);
-            ie.printStackTrace();
-        }
+        Util.processSleep(sleepTime);
+        System.out.println(Thread.currentThread().getName() + " Waiting...");
         System.out.println(Thread.currentThread().getName() + " Stopped");
     }
 }

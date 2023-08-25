@@ -2,8 +2,6 @@ package task_04;
 
 import general.*;
 
-import java.util.Arrays;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -16,10 +14,6 @@ public class Main {
         fruits.interrupt();
 
         Veges veges = new Veges();
-        showVeges(veges.getFoodItems());
-    }
-
-    private static void showVeges(String[] veges) {
-        Arrays.stream(veges).forEach(System.out::println);
+        Util.show(veges.getFoodItems());
     }
 }
